@@ -79,21 +79,19 @@
         }
 
         var baseLayers = {
-            "Satellite": L.tileLayer(`https://api.maptiler.com/tiles/satellite/{z}/{x}/{y}.jpg?key=${apiKey}`, {
+            "Satellite": L.tileLayer(`https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=${apiKey}`, {
                 attribution: '&copy; MapTiler & OpenStreetMap contributors'
             }),
-            "Aquarelle": mapTilerLayer("aquarelle"),
+            
             "Backdrop": mapTilerLayer("backdrop"),
             "Basic": mapTilerLayer("basic"),
             "Bright": mapTilerLayer("bright"),
-            "Dataviz": mapTilerLayer("dataviz"),
             "Landscape": mapTilerLayer("landscape"),
             "Ocean": mapTilerLayer("ocean"),
             "Outdoor": mapTilerLayer("outdoor"),
             "Streets": mapTilerLayer("streets"),
             "Toner": mapTilerLayer("toner"),
             "Topo": mapTilerLayer("topo"),
-            "Winter": mapTilerLayer("winter")
         };
         
         baseLayers["Streets"].addTo(map);
@@ -104,7 +102,6 @@
             defaultMarkGeocode: true
         }).addTo(map);
         
-
         function resetMap() {
             map.setView([20, 78], 5);
             map.eachLayer(function (layer) {
